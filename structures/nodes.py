@@ -1,18 +1,19 @@
+from __future__ import annotations
 from typing import Any
 
 class Node:
 
-    def __init__(self, data: type[Any], nextNode = None) -> None:
+    def __init__(self, data: Any, nextNode: Node|None = None) -> None:
         self.data = data
         self.nextNode = nextNode
 
     def setNext(self, nextNode) -> None:
         self.nextNode = nextNode
 
-    def getNext(self):
+    def getNext(self) -> Node|None:
         return self.nextNode
     
-    def getData(self) -> type:
+    def getData(self) -> Any:
         return self.data
     
 if __name__ == '__main__':
@@ -22,8 +23,7 @@ if __name__ == '__main__':
     b.setNext(c)
 
     current = a
-    while True:
+    while current:
         print(current.getData())
-        if not current.getNext(): break
         current = current.getNext()
 
