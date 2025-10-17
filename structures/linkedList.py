@@ -1,4 +1,3 @@
-from __future__ import annotations
 from typing import Any
 from nodes import Node
 
@@ -23,16 +22,14 @@ class LinkedList:
 
     def remove(self, toRemove) -> None:
         current = self.getHead()
-        if current and current.getData() == toRemove:
-            self.head = current.getNext()
+        if current and current.getData() == toRemove: self.head = current.getNext()
         else:
             while current:
                 nextNode = current.getNext()
                 if nextNode and nextNode.getData() == toRemove:
                     current.setNext(nextNode.getNext())
                     current = None
-                else:
-                    current = nextNode
+                else: current = nextNode
         
 if __name__ == '__main__':
     ll = LinkedList('c')

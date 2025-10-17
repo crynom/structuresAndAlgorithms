@@ -3,16 +3,23 @@ from typing import Any
 
 class Node:
 
-    def __init__(self, data: Any, nextNode: Node|None = None) -> None:
+    def __init__(self, data: Any, nextNode: Node|None = None, prevNode: Node|None = None) -> None:
         self.data = data
         self.nextNode = nextNode
+        self.prevNode = prevNode
 
-    def setNext(self, nextNode) -> None:
+    def setNext(self, nextNode: Node|None) -> None:
         self.nextNode = nextNode
 
     def getNext(self) -> Node|None:
         return self.nextNode
     
+    def setPrev(self, prevNode: Node|None) -> None:
+        self.prevNode = prevNode
+
+    def getPrev(self) -> Node|None:
+        return self.prevNode
+
     def getData(self) -> Any:
         return self.data
     
